@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP UP YUDZZ TAMVAN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #6a11cb;
+            --secondary: #2575fc;
+            --accent: #ff3366;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #28a745;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: var(--light);
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeIn 1s ease;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #ff3366, #ffdd00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: slideUp 0.5s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent), transparent);
+            border-radius: 3px;
+        }
+
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .game-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .game-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: scale(1.03);
+        }
+
+        .game-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffdd00;
+        }
+
+        .game-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .price-range {
+            font-size: 0.9rem;
+            color: #ffdd00;
+        }
+
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-method {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .payment-icon {
+            font-size: 1.5rem;
+        }
+
+        .wa-button {
+            display: inline-block;
+            background: linear-gradient(to right, #25D366, #128C7E);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .wa-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .note {
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">TOP UP YUDZZ TAMVAN</div>
+            <p class="tagline">Top Up Game Murah, Cepat, dan Terpercaya</p>
+        </header>
+
+        <div class="card">
+            <h2 class="section-title">Daftar Game</h2>
+            <p>Pilih game yang ingin Anda top up. Harga sudah termasuk fee layanan.</p>
+            
+            <div class="game-list">
+                <div class="game-item">
+                    <div class="game-icon"><i class="fas fa-fire"></i></div>
+                    <h3 class="game-title">Free Fire</h3>
+                    <p class="game-desc">Top Up Diamond Free Fire dengan proses instan</p>
+                    <p class="price-range">Rp 1.100 - Rp 945.000</p>
+                </div>
+                
+                <div class="game-item">
+                    <div class="game-icon"><i class="fas fa-crown"></i></div>
+                    <h3 class="game-title">Mobile Legends</h3>
+                    <p class="game-desc">Top Up Diamond MLBB dengan proses instan</p>
+                    <p class="price-range">Rp 1.300 - Rp 2.190.000</p>
+                </div>
+                
+                <div class="game-item">
+                    <div class="game-icon"><i class="fas fa-crosshairs"></i></div>
+                    <h3 class="game-title">PUBG Mobile</h3>
+                    <p class="game-desc">Top Up UC PUBG dengan proses instan</p>
+                    <p class="price-range">Rp 15.900 - Rp 1.590.000</p>
+                </div>
+                
+                <div class="game-item">
+                    <div class="game-icon"><i class="fas fa-dragon"></i></div>
+                    <h3 class="game-title">Genshin Impact</h3>
+                    <p class="game-desc">Top Up Genesis Crystal dengan proses instan</p>
+                    <p class="price-range">Rp 12.350 - Rp 63.700.000</p>
+                </div>
+            </div>
+            
+            <p class="note">Game lain bisa ditanyakan melalui WhatsApp</p>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">Metode Pembayaran</h2>
+            <p>Lakukan pembayaran melalui e-wallet berikut:</p>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <div class="payment-icon"><i class="fas fa-wallet"></i></div>
+                    <div>
+                        <h3>DANA</h3>
+                        <p>085731156691</p>
+                    </div>
+                </div>
+                
+                <div class="payment-method">
+                    <div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div>
+                    <div>
+                        <h3>GoPay</h3>
+                        <p>085731156691</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="note">Transfer tepat sampai 3 digit terakhir untuk proses cepat</p>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2 class="section-title" style="margin: 0 auto;">Pesan Sekarang</h2>
+            <p style="margin-top: 1rem;">Hubungi kami via WhatsApp untuk pemesanan dan informasi lebih lanjut</p>
+            
+            <a href="https://wa.me/6285836243508" class="wa-button">
+                <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+            </a>
+            
+            <p class="note">Respon cepat 24 jam untuk proses top up game Anda</p>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 TOP UP YUDZZ TAMVAN - Layanan Top Up Game Terpercaya</p>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#
